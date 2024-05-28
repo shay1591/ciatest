@@ -22,5 +22,4 @@ jobs:
           dotnet-version: '3.1.X'
 
       - name: Build solution
-        working-directory: ./src
         run: dotnet build --configuration Release
