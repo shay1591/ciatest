@@ -1,0 +1,24 @@
+
+name: Ci Build
+
+on:
+  pull_request:
+    branches:
+      - main
+      - dev
+  workflow_dispatch:
+
+jobs:
+  build-projects:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3.1
+
+      - name: Build solution
+        working-directory: ./src
+        run: dotnet build --configuration Release
