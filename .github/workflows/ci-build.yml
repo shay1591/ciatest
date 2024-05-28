@@ -22,4 +22,5 @@ jobs:
           dotnet-version: '3.1.X'
 
       - name: Build solution
+        working-directory: ./ConsoleApp1
         run: dotnet build --configuration Release
